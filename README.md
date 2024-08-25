@@ -1,9 +1,9 @@
 # Abstention Boosts Performance in Dynamic Graph Learning
-This repository is built for the paper [Abstention Boosts Performance in Dynamic Graph Learning].
+This repository is built for the paper "Abstention Boosts Performance in Dynamic Graph Learning".
 
 
 ## Overview
-This repository is built on Dynamic Graph Library ([DyGLib](https://github.com/yule-BUAA/DyGLib)), is an open-source toolkit with standard training pipelines, extensible coding interfaces, and comprehensive evaluating strategies,
+This repository is built on Dynamic Graph Library ([DyGLib](https://github.com/yule-BUAA/DyGLib)), which is an open-source toolkit with standard training pipelines, extensible coding interfaces, and comprehensive evaluating strategies,
 which aims to promote standard, scalable, and reproducible dynamic graph learning research. Diverse benchmark datasets and thorough baselines are involved in DyGLib.
 <!-- ![](figures/DyGLib_procedure.jpg) -->
 
