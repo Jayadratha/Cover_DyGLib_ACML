@@ -34,17 +34,18 @@ python preprocess_all_data.py
 
 ## Dynamic Graph Learning Models
 
-Eight popular continuous-time dynamic graph learning methods are included in DyGLib, including 
+Nine popular continuous-time dynamic graph learning methods are included in DyGLib, including
 [JODIE](https://dl.acm.org/doi/10.1145/3292500.3330895), 
 [DyRep](https://openreview.net/forum?id=HyePrhR5KX), 
 [TGAT](https://openreview.net/forum?id=rJeW1yHYwH), 
 [TGN](https://arxiv.org/abs/2006.10637), 
 [CAWN](https://openreview.net/forum?id=KYPz4YsCPj), 
 [EdgeBank](https://openreview.net/forum?id=1GVpwr2Tfdg), 
-[TCL](https://arxiv.org/abs/2105.07944), and 
-[GraphMixer](https://openreview.net/forum?id=ayPPc0SyLv1).
-[DyGFormer](https://arxiv.org/abs/2303.13047) is also integrated into DyGLib, which can explore the correlations of the source node and destination node by a neighbor co-occurrence encoding scheme, and
-effectively and efficiently benefit from longer histories via a patching technique.
+[TCL](https://arxiv.org/abs/2105.07944),
+[GraphMixer](https://openreview.net/forum?id=ayPPc0SyLv1), and
+[DyGFormer](https://arxiv.org/abs/2303.13047).
+<!-- is also integrated into Cover_DyGLib, which can explore the correlations of the source node and destination node by a neighbor co-occurrence encoding scheme, and -->
+<!-- effectively and efficiently benefit from longer histories via a patching technique. -->
 <!-- ![](figures/DyGFormer_framework.jpg) -->
 
 
