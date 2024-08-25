@@ -16,10 +16,10 @@ from models.DyGFormer import DyGFormer
 from models.modules_node_cover import MLPClassifier
 from utils.utils import set_random_seed, convert_to_gpu, get_parameter_sizes
 from utils.utils import get_neighbor_sampler
-from cvr_evaluate_models_utils_tsne_ablition import cvr_evaluate_model_node_classification_tsne_ablition, find_threshold
+from cvr_evaluate_models_utils_ablition import cvr_evaluate_model_node_classification, find_threshold
 from utils.DataLoader import get_idx_data_loader, get_node_classification_data
 from utils.EarlyStopping import EarlyStopping
-from utils.load_configs import get_node_classification_args
+from utils.load_configs import get_node_classification_args_abl_beta
 from utils.loss import SelectiveLoss, find_tres
 
 if __name__ == "__main__":
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     warnings.filterwarnings('ignore')
 
     # get arguments
-    args = get_node_classification_args()
+    args = get_node_classification_args_abl_beta()
 
     # get data for training, validation and testing
     node_raw_features, edge_raw_features, full_data, train_data, val_data, test_data = \
@@ -118,8 +118,8 @@ if __name__ == "__main__":
                     f'{get_parameter_sizes(model) * 4 / 1024} KB, {get_parameter_sizes(model) * 4 / 1024 / 1024} MB.')
 
         # load the saved model
-        load_model_folder = f"/scratch/jayag/Cover_DyGLib_TGN/saved_models/{args.model_name}/{args.dataset_name}/{args.load_model_name}/ablition/lr_{args.learning_rate}/cov_{args.coverage}/wgt_{args.cls_1_wgt}/"
-        # load_model_folder = f"/scratch/jayag/Cover_DyGLib_TGN/saved_models/{args.model_name}/{args.dataset_name}/{args.load_model_name}/lr_{args.learning_rate}/cov_{args.coverage}"
+        load_model_folder = f"./saved_models/{args.model_name}/{args.dataset_name}/{args.load_model_name}/ablition/lr_{args.learning_rate}/cov_{args.coverage}/wgt_{args.cls_1_wgt}/"
+        # load_model_folder = f"./saved_models/{args.model_name}/{args.dataset_name}/{args.load_model_name}/lr_{args.learning_rate}/cov_{args.coverage}"
         early_stopping = EarlyStopping(patience=0, save_model_folder=load_model_folder,
                                        save_model_name=args.load_model_name, logger=logger, model_name=args.model_name)
         early_stopping.load_checkpoint(model, map_location='cpu')
@@ -141,7 +141,7 @@ if __name__ == "__main__":
 
         # the saved best model of memory-based models cannot perform validation since the stored memory has been updated by validation data
         if args.model_name not in ['JODIE', 'DyRep', 'TGN']:
-            val_total_loss, val_metrics, _ = cvr_evaluate_model_node_classification_tsne_ablition(model_name=args.model_name,
+            val_total_loss, val_metrics, _ = cvr_evaluate_model_node_classification(model_name=args.model_name,
                                                                              model=model,
                                                                              neighbor_sampler=full_neighbor_sampler,
                                                                              evaluate_idx_data_loader=val_idx_data_loader,
@@ -152,10 +152,9 @@ if __name__ == "__main__":
                                                                              alphaloss= args.alphaloss,
                                                                              cls_1_wgt = args.cls_1_wgt,                                                 
                                                                              num_neighbors=args.num_neighbors,
-                                                                             time_gap=args.time_gap,
-                                                                             seed=args.seed)
+                                                                             time_gap=args.time_gap)
 
-        test_total_loss, test_metrics, test_labels_stat = cvr_evaluate_model_node_classification_tsne_ablition(model_name=args.model_name,
+        test_total_loss, test_metrics, test_labels_stat = cvr_evaluate_model_node_classification(model_name=args.model_name,
                                                                            model=model,
                                                                            neighbor_sampler=full_neighbor_sampler,
                                                                            evaluate_idx_data_loader=test_idx_data_loader,
@@ -166,8 +165,7 @@ if __name__ == "__main__":
                                                                            alphaloss= args.alphaloss,
                                                                            cls_1_wgt = args.cls_1_wgt,                                                                           
                                                                            num_neighbors=args.num_neighbors,
-                                                                           time_gap=args.time_gap,
-                                                                           seed=args.seed)
+                                                                           time_gap=args.time_gap)
 
     #     # store the evaluation metrics at the current run
     #     val_metric_dict, test_metric_dict = {}, {}
