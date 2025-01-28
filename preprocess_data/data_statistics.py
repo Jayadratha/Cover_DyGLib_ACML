@@ -12,8 +12,8 @@ if __name__ == "__main__":
                     'Flights', 'CanParl', 'USLegis', 'UNtrade', 'UNvote', 'Contacts']
     records = []
     for dataset_name in sorted(all_datasets, key=lambda v: v.upper()):
-        edge_raw_features = np.load('/data/jayag/dataset/processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name))
-        node_raw_features = np.load('/data/jayag/dataset/processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name))
+        edge_raw_features = np.load('./dataset/processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name))
+        node_raw_features = np.load('./dataset/processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name))
         info = {'dataset_name': dataset_name,
                 'num_nodes': node_raw_features.shape[0] - 1,
                 'node_feat_dim': node_raw_features.shape[-1],

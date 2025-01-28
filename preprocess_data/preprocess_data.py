@@ -89,11 +89,11 @@ def preprocess_data(dataset_name: str, bipartite: bool = True, node_feat_dim: in
     :param node_feat_dim: int, dimension of node features
     :return:
     """
-    Path("/data/jayag/dataset/processed_data/{}/".format(dataset_name)).mkdir(parents=True, exist_ok=True)
-    PATH = '/data/jayag/dataset/DG_data/{}/{}.csv'.format(dataset_name, dataset_name)
-    OUT_DF = '/data/jayag/dataset/processed_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
-    OUT_FEAT = '/data/jayag/dataset/processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
-    OUT_NODE_FEAT = '/data/jayag/dataset/processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
+    Path("./dataset/processed_data/{}/".format(dataset_name)).mkdir(parents=True, exist_ok=True)
+    PATH = './dataset/DG_data/{}/{}.csv'.format(dataset_name, dataset_name)
+    OUT_DF = './dataset/processed_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
+    OUT_FEAT = './dataset/processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
+    OUT_NODE_FEAT = './dataset/processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
 
     df, edge_feats = preprocess(PATH)
     new_df = reindex(df, bipartite)
@@ -124,14 +124,14 @@ def check_data(dataset_name: str):
     :return:
     """
     # original data paths
-    origin_OUT_DF = '/data/jayag/dataset/DG_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
-    origin_OUT_FEAT = '/data/jayag/dataset/DG_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
-    origin_OUT_NODE_FEAT = '/data/jayag/dataset/DG_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
+    origin_OUT_DF = './dataset/DG_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
+    origin_OUT_FEAT = './dataset/DG_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
+    origin_OUT_NODE_FEAT = './dataset/DG_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
 
     # processed data paths
-    OUT_DF = '/data/jayag/dataset/processed_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
-    OUT_FEAT = '/data/jayag/dataset/processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
-    OUT_NODE_FEAT = '/data/jayag/dataset/processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
+    OUT_DF = './dataset/processed_data/{}/ml_{}.csv'.format(dataset_name, dataset_name)
+    OUT_FEAT = './dataset/processed_data/{}/ml_{}.npy'.format(dataset_name, dataset_name)
+    OUT_NODE_FEAT = './dataset/processed_data/{}/ml_{}_node.npy'.format(dataset_name, dataset_name)
 
     # Load original data
     origin_g_df = pd.read_csv(origin_OUT_DF)
@@ -161,8 +161,8 @@ args = parser.parse_args()
 
 print(f'preprocess dataset {args.dataset_name}...')
 if args.dataset_name in ['enron', 'SocialEvo', 'uci']:
-    Path("/data/jayag/dataset/processed_data/{}/".format(args.dataset_name)).mkdir(parents=True, exist_ok=True)
-    copy_tree("/data/jayag/dataset/DG_data/{}/".format(args.dataset_name), "/data/jayag/dataset/processed_data/{}/".format(args.dataset_name))
+    Path("./dataset/processed_data/{}/".format(args.dataset_name)).mkdir(parents=True, exist_ok=True)
+    copy_tree("./dataset/DG_data/{}/".format(args.dataset_name), "./dataset/processed_data/{}/".format(args.dataset_name))
     print(f'the original dataset of {args.dataset_name} is unavailable, directly use the processed dataset by previous works.')
 else:
     # bipartite dataset
