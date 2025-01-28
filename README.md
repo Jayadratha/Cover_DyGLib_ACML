@@ -1,5 +1,5 @@
-# Abstention Boosts Performance in Dynamic Graph Learning
-This repository is built for the paper "Abstention Boosts Performance in Dynamic Graph Learning".
+# Predict Confidently, Predict Right: Abstention in Dynamic Graph Learning
+This repository is built for the paper "Predict Confidently, Predict Right: Abstention in Dynamic Graph Learning".
 
 
 ## Overview
@@ -155,7 +155,7 @@ python cvr_train_node_classification_ablition.py --dataset_name wikipedia --mode
 #### Model Evaluation
 * If you want to use the best model configurations to evaluate *TGN* on *Wikipedia* dataset, run
 ```{bash}
-python cvr_evaluate_node_classification_ablition.py --dataset_name wikipedia --model_name TGN --load_best_configs --num_runs 5 --gpu 0 --lambda_val 32 --coverage 0.9 --learning_rate 0.0018859085429843133 --cls_1_wgt 2.0
+python cvr_evaluate_node_classification_ablition.py --dataset_name wikipedia --model_name TGN --load_best_configs --num_runs 5 --gpu 0 --lambda_val 32 --coverage 0.9 --cls_1_wgt 2.0
 ```
 
 ## Acknowledgments
