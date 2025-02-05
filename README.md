@@ -13,7 +13,7 @@ which aims to promote standard, scalable, and reproducible dynamic graph learnin
 ## Benchmark Datasets and Preprocessing
 
 Fourteen datasets are used in DyGLib, including Wikipedia, Reddit, MOOC, LastFM, Myket, Enron, Social Evo., UCI, Flights, Can. Parl., 
-US Legis., UN Trade, UN Vote, and Contact. The first five datasets are bipartite, and the others only contain nodes with a single type.
+US Legis., UN Trade, UN Vote, and Contact. The first five datasets are bipartite, and the others only contain nodes with a single type. We have used only four datasets Wikipedia, Reddit, Can. Parl., UN Trade in our experiments but can be extended with any other dataset.
 
 Most of the used original dynamic graph datasets come from [Towards Better Evaluation for Dynamic Link Prediction](https://openreview.net/forum?id=1GVpwr2Tfdg), 
 which can be downloaded [here](https://zenodo.org/record/7213796#.Y1cO6y8r30o). 
@@ -44,6 +44,8 @@ Nine popular continuous-time dynamic graph learning methods are included in DyGL
 [TCL](https://arxiv.org/abs/2105.07944),
 [GraphMixer](https://openreview.net/forum?id=ayPPc0SyLv1), and
 [DyGFormer](https://arxiv.org/abs/2303.13047).
+
+We have used TGN, GraphMixer and DyGFormer as the baseline for our experiments but it can be extended with any other CTDG method given in DyGLib.
 <!-- is also integrated into Cover_DyGLib, which can explore the correlations of the source node and destination node by a neighbor co-occurrence encoding scheme, and -->
 <!-- effectively and efficiently benefit from longer histories via a patching technique. -->
 <!-- ![](figures/DyGFormer_framework.jpg) -->
