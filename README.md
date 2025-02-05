@@ -1,12 +1,14 @@
 # Predict Confidently, Predict Right: Abstention in Dynamic Graph Learning
 This repository is built for the paper "Predict Confidently, Predict Right: Abstention in Dynamic Graph Learning".
 
-
 ## Overview
 This repository is built on Dynamic Graph Library ([DyGLib](https://github.com/yule-BUAA/DyGLib)), which is an open-source toolkit with standard training pipelines, extensible coding interfaces, and comprehensive evaluating strategies,
 which aims to promote standard, scalable, and reproducible dynamic graph learning research. Diverse benchmark datasets and thorough baselines are involved in DyGLib.
 <!-- ![](figures/DyGLib_procedure.jpg) -->
 
+## Additional Results
+- Main results are summarized in `Table I, II, III` in the paper.
+- For extended findings, see the [additional results PDF](additional_results/appendix.pdf).
 
 ## Benchmark Datasets and Preprocessing
 
@@ -15,10 +17,8 @@ US Legis., UN Trade, UN Vote, and Contact. The first five datasets are bipartite
 
 Most of the used original dynamic graph datasets come from [Towards Better Evaluation for Dynamic Link Prediction](https://openreview.net/forum?id=1GVpwr2Tfdg), 
 which can be downloaded [here](https://zenodo.org/record/7213796#.Y1cO6y8r30o). 
-Please download them and put them in ```DG_data``` folder. 
-The Myket dataset comes from [Effect of Choosing Loss Function when Using T-batching for Representation Learning on Dynamic Networks](https://arxiv.org/abs/2308.06862) and 
-can be accessed from [here](https://github.com/erfanloghmani/myket-android-application-market-dataset). 
-The original and preprocessed files for Myket dataset are included in this repository.
+Please download them and put them in ```dataset``` folder.
+
 
 We can run ```preprocess_data/preprocess_data.py``` for pre-processing the datasets.
 For example, to preprocess the *Wikipedia* dataset, we can run the following commands:
@@ -113,6 +113,12 @@ python cvr_train_link_prediction.py --dataset_name wikipedia --model_name TGN --
 python cvr_evaluate_link_prediction.py --dataset_name wikipedia --model_name TGN --coverage 0.7 --load_best_configs --lambda_val 32 --negative_sample_strategy random --num_runs 5 --gpu 0
 ```
 
+### Dynamic link prdecition results on DyGFormer
+* AP and AUC score for transductive dynamic link prdecition with DyGFormer
+![Transductive_DyGFormer](additional_results/Transductive_DyGFormer.png)
+
+* AP and AUC score for inductive dynamic link prdecition with DyGFormer
+![Inductive_DyGFormer](additional_results/Inductive_DyGFormer.png)
 
 ### Scripts for Dynamic Node Classification
 Dynamic node classification could be performed on Wikipedia and Reddit (the only two datasets with dynamic labels).
@@ -157,6 +163,10 @@ python cvr_train_node_classification_ablition.py --dataset_name wikipedia --mode
 ```{bash}
 python cvr_evaluate_node_classification_ablition.py --dataset_name wikipedia --model_name TGN --load_best_configs --num_runs 5 --gpu 0 --lambda_val 32 --coverage 0.9 --cls_1_wgt 2.0
 ```
+### Dynamic node classification results on DyGFormer
+* AUC score for dynamic node classification by DyGFormer with and withoput handling class imbalance.
+![Node_Classification_DyGFormer](additional_results/Node_Classification_DyGFormer.png)
+
 
 ## Acknowledgments
 
