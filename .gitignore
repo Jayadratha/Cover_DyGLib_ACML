@@ -127,3 +127,4 @@ logs_wandb/
 csv_results/
 wandb/
 extra/
+hide/

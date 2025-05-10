@@ -16,7 +16,7 @@ from models.DyGFormer import DyGFormer
 from models.modules_link_cover import MergeLayer # change merger layer
 from utils.utils import set_random_seed, convert_to_gpu, get_parameter_sizes
 from utils.utils import get_neighbor_sampler, NegativeEdgeSampler
-from evaluate_models_utils_link_cover import evaluate_model_link_prediction, evaluate_edge_bank_link_prediction
+from utils.evaluate_models_utils_link_cover import evaluate_model_link_prediction, evaluate_edge_bank_link_prediction
 from utils.DataLoader import get_idx_data_loader, get_link_prediction_data
 from utils.EarlyStopping import EarlyStopping
 from utils.load_configs import get_link_prediction_args_cvr_based

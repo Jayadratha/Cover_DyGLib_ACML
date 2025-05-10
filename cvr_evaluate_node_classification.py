@@ -16,7 +16,7 @@ from models.DyGFormer import DyGFormer
 from models.modules_node_cover import MLPClassifier
 from utils.utils import set_random_seed, convert_to_gpu, get_parameter_sizes
 from utils.utils import get_neighbor_sampler
-from cvr_evaluate_models_utils import evaluate_model_node_classification, find_threshold
+from utils.cvr_evaluate_models_utils import evaluate_model_node_classification, find_threshold
 from utils.DataLoader import get_idx_data_loader, get_node_classification_data
 from utils.EarlyStopping import EarlyStopping
 from utils.load_configs import cls_agnostic_get_node_classification_args_cvr_based

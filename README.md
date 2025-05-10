@@ -77,7 +77,7 @@ as well as dynamic node classification with the coverage based classification wi
 
 ## Executing Scripts
 
-### Scripts for Dynamic Link Prediction
+<!--### Scripts for Dynamic Link Prediction
 Dynamic link prediction could be performed on all the thirteen datasets. 
 If you want to load the best model configurations determined by the grid search, please set the *load_best_configs* argument to True.
 #### Model Training
@@ -98,7 +98,7 @@ python evaluate_link_prediction.py --dataset_name wikipedia --model_name DyGForm
 * If you want to use the best model configurations to evaluate *TGN* with *random* negative sampling strategy on *Wikipedia* dataset, run
 ```{bash}
 python evaluate_link_prediction.py --dataset_name wikipedia --model_name TGN --negative_sample_strategy random --load_best_configs --num_runs 5 --gpu 0
-```
+```-->
 ### Scripts for Coverage Based Dynamic Link Prediction
 Dynamic link prediction could be performed on all the thirteen datasets and any model supported in
 [DyGLib](https://github.com/yule-BUAA/DyGLib) like TGN, GraphMixer, TGAT, DyGFormer etc.
@@ -122,7 +122,7 @@ python cvr_evaluate_link_prediction.py --dataset_name wikipedia --model_name TGN
 * AP and AUC score for inductive dynamic link prdecition with DyGFormer
 ![Inductive_DyGFormer](additional_results/Inductive_DyGFormer.png)
 
-### Scripts for Dynamic Node Classification
+<!--### Scripts for Dynamic Node Classification
 Dynamic node classification could be performed on Wikipedia and Reddit (the only two datasets with dynamic labels).
 #### Model Training
 * Example of training *DyGFormer* on *Wikipedia* dataset:
@@ -141,7 +141,7 @@ python evaluate_node_classification.py --dataset_name wikipedia --model_name DyG
 * If you want to use the best model configurations to evaluate *TGN* on *Wikipedia* dataset, run
 ```{bash}
 python evaluate_node_classification.py --dataset_name wikipedia --model_name TGN --load_best_configs --num_runs 5 --gpu 0
-```
+```-->
 ### Scripts for Coverage Based Dynamic Node Classification
 #### Model Training
 * If you want to use the best model configurations to train *TGN* on *Wikipedia* dataset, run
