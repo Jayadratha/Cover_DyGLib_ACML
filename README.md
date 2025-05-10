@@ -7,7 +7,7 @@ which aims to promote standard, scalable, and reproducible dynamic graph learnin
 <!-- ![](figures/DyGLib_procedure.jpg) -->
 
 ## Additional Results
-- Main results are summarized in `Table I, II, III` in the paper.
+- Main results are summarized in `Table 1, 2` and `Fig 3` in the paper.
 - <span style="color: red;">For extended findings, see the [additional results PDF](additional_results/appendix.pdf).</span>
 
 ## Benchmark Datasets and Preprocessing
