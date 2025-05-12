@@ -1,5 +1,6 @@
 # Predict Confidently, Predict Right: Abstention in Dynamic Graph Learning
 This repository is built for the paper "Predict Confidently, Predict Right: Abstention in Dynamic Graph Learning".
+![architecture_diag](additional_results/architecture_diag.png)
 
 ## Overview
 This repository is built on Dynamic Graph Library ([DyGLib](https://github.com/yule-BUAA/DyGLib)), which is an open-source toolkit with standard training pipelines, extensible coding interfaces, and comprehensive evaluating strategies,
@@ -117,10 +118,10 @@ python cvr_evaluate_link_prediction.py --dataset_name wikipedia --model_name TGN
 
 ### Dynamic link prdecition results on DyGFormer
 * AP and AUC score for transductive dynamic link prdecition with DyGFormer
-![Transductive_DyGFormer](additional_results/Transductive_DyGFormer.png)
+![Transductive_DyGFormer](additional_results/trans_dyg.png)
 
 * AP and AUC score for inductive dynamic link prdecition with DyGFormer
-![Inductive_DyGFormer](additional_results/Inductive_DyGFormer.png)
+![Inductive_DyGFormer](additional_results/ind_dyg.png)
 
 <!--### Scripts for Dynamic Node Classification
 Dynamic node classification could be performed on Wikipedia and Reddit (the only two datasets with dynamic labels).
@@ -167,7 +168,7 @@ python cvr_evaluate_node_classification_ablition.py --dataset_name wikipedia --m
 ```
 ### Dynamic node classification results on DyGFormer
 * AUC score for dynamic node classification by DyGFormer with and withoput handling class imbalance.
-![Node_Classification_DyGFormer](additional_results/Node_Classification_DyGFormer.png)
+![Node_Classification_DyGFormer](additional_results/node_clf_dyg.png)
 
 
 ## Acknowledgments
