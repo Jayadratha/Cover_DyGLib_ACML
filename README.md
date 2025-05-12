@@ -1,5 +1,5 @@
-# Predict Confidently, Predict Right: Abstention in Dynamic Graph Learning
-This repository is built for the paper "Predict Confidently, Predict Right: Abstention in Dynamic Graph Learning".
+# Reducing Misclassification Risk in Dynamic Graph Neural Networks through Abstention
+This repository is built for the paper "Reducing Misclassification Risk in Dynamic Graph Neural Networks through Abstention".
 ![architecture_diag](additional_results/architecture_diag.png)
 
 ## Overview
