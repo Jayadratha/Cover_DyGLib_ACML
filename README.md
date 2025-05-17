@@ -1,5 +1,5 @@
-# Reducing Misclassification Risk in Dynamic Graph Neural Networks through Abstention
-This repository is built for the paper "Reducing Misclassification Risk in Dynamic Graph Neural Networks through Abstention".
+# Confidence First: Reliability-Driven Temporal Graph Neural Networks
+This repository is built for the paper "Confidence First: Reliability-Driven Temporal Graph Neural Networks".
 ![architecture_diag](additional_results/architecture_diag.png)
 
 ## Overview
