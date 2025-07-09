@@ -1,5 +1,7 @@
 # Reducing Misclassification Risk in Dynamic Graph Neural Networks through Abstention
-This repository is built for the paper "Reducing Misclassification Risk in Dynamic Graph Neural Networks through Abstention".
+This repository accompanies the paper **"Reducing Misclassification Risk in Dynamic Graph Neural Networks through Abstention"**, accepted at **ASONAM 2025**.
+A version of this work was also accepted at the **TGL Workshop @ KDD 2025**, titled:
+**"Confidence First: Reliability-Driven Temporal Graph Neural Networks"**.
 ![architecture_diag](additional_results/architecture_diag.png)
 
 ## Overview
@@ -13,11 +15,11 @@ which aims to promote standard, scalable, and reproducible dynamic graph learnin
 
 ## Benchmark Datasets and Preprocessing
 
-Fourteen datasets are used in DyGLib, including Wikipedia, Reddit, MOOC, LastFM, Myket, Enron, Social Evo., UCI, Flights, Can. Parl., 
+Fourteen datasets are used in DyGLib, including Wikipedia, Reddit, MOOC, LastFM, Myket, Enron, Social Evo., UCI, Flights, Can. Parl.,
 US Legis., UN Trade, UN Vote, and Contact. The first five datasets are bipartite, and the others only contain nodes with a single type. We have used only four datasets Wikipedia, Reddit, Can. Parl., UN Trade in our experiments but can be extended with any other dataset.
 
-Most of the used original dynamic graph datasets come from [Towards Better Evaluation for Dynamic Link Prediction](https://openreview.net/forum?id=1GVpwr2Tfdg), 
-which can be downloaded [here](https://zenodo.org/record/7213796#.Y1cO6y8r30o). 
+Most of the used original dynamic graph datasets come from [Towards Better Evaluation for Dynamic Link Prediction](https://openreview.net/forum?id=1GVpwr2Tfdg),
+which can be downloaded [here](https://zenodo.org/record/7213796#.Y1cO6y8r30o).
 Please download them and put them in ```dataset``` folder.
 
 
@@ -36,12 +38,12 @@ python preprocess_all_data.py
 ## Dynamic Graph Learning Models
 
 Nine popular continuous-time dynamic graph learning methods are included in DyGLib, including
-[JODIE](https://dl.acm.org/doi/10.1145/3292500.3330895), 
-[DyRep](https://openreview.net/forum?id=HyePrhR5KX), 
-[TGAT](https://openreview.net/forum?id=rJeW1yHYwH), 
-[TGN](https://arxiv.org/abs/2006.10637), 
-[CAWN](https://openreview.net/forum?id=KYPz4YsCPj), 
-[EdgeBank](https://openreview.net/forum?id=1GVpwr2Tfdg), 
+[JODIE](https://dl.acm.org/doi/10.1145/3292500.3330895),
+[DyRep](https://openreview.net/forum?id=HyePrhR5KX),
+[TGAT](https://openreview.net/forum?id=rJeW1yHYwH),
+[TGN](https://arxiv.org/abs/2006.10637),
+[CAWN](https://openreview.net/forum?id=KYPz4YsCPj),
+[EdgeBank](https://openreview.net/forum?id=1GVpwr2Tfdg),
 [TCL](https://arxiv.org/abs/2105.07944),
 [GraphMixer](https://openreview.net/forum?id=ayPPc0SyLv1), and
 [DyGFormer](https://arxiv.org/abs/2303.13047).
@@ -72,14 +74,14 @@ as well as dynamic node classification with the coverage based classification wi
 [PyTorch 12.1](https://pytorch.org/),
 [numpy](https://github.com/numpy/numpy),
 [pandas](https://github.com/pandas-dev/pandas),
-[tqdm](https://github.com/tqdm/tqdm), and 
+[tqdm](https://github.com/tqdm/tqdm), and
 [tabulate](https://github.com/astanin/python-tabulate)
 
 
 ## Executing Scripts
 
 <!--### Scripts for Dynamic Link Prediction
-Dynamic link prediction could be performed on all the thirteen datasets. 
+Dynamic link prediction could be performed on all the thirteen datasets.
 If you want to load the best model configurations determined by the grid search, please set the *load_best_configs* argument to True.
 #### Model Training
 * Example of training *DyGFormer* on *Wikipedia* dataset:
@@ -173,10 +175,10 @@ python cvr_evaluate_node_classification_ablition.py --dataset_name wikipedia --m
 
 ## Acknowledgments
 
-We are grateful to the authors of 
-[TGAT](https://github.com/StatsDLMathsRecomSys/Inductive-representation-learning-on-temporal-graphs), 
-[TGN](https://github.com/twitter-research/tgn), 
-[CAWN](https://github.com/snap-stanford/CAW), 
+We are grateful to the authors of
+[TGAT](https://github.com/StatsDLMathsRecomSys/Inductive-representation-learning-on-temporal-graphs),
+[TGN](https://github.com/twitter-research/tgn),
+[CAWN](https://github.com/snap-stanford/CAW),
 [EdgeBank](https://github.com/fpour/DGB),
 [GraphMixer](https://github.com/CongWeilin/GraphMixer), and
 [DyGFormer](https://github.com/yule-BUAA/DyGLib) for making their project codes publicly available.
